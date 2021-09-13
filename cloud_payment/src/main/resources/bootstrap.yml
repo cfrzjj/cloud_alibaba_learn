@@ -1,0 +1,42 @@
+server:
+  port: 8070
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: dev
+  application:
+    name: payment-service
+    cloud:
+      nacos:
+        discovery:
+          server-addr: 127.0.0.1:8848
+#          server-addr: 172.17.169.81:8848
+          #namespace: b561281a-fb95-411e-b75b-cf36bfc90854
+        #config:
+          #server-addr: ${spring.cloud.nacos.discovery.server-addr}
+          #file-extension: properties
+          #namespace: b561281a-fb95-411e-b75b-cf36bfc90854
+          #group: payment
+      sentinel:
+        transport:
+          dashboard: 127.0.0.1:8080 #dashboard访问的端口
+#          dashboard: localhost:9999 #dashboard访问的端口
+          port: 8070 #需要监听应用的端口
+#          port: 8719 #需要监听应用的端口
+          clientIp: 127.0.0.1
+        datasource:
+          dsl:
+            nacos:
+              server-addr: 127.0.0.1:8848
+#              server-addr: 172.17.169.81:8848
+              data-id: ${spring.application.name}-sentinel #修改nacos中的data-id配置文件
+              group-id: DEFAULT_GROUP
+              data-type: json
+              rule-type: flow
+      management:
+        endpoints:
+          web:
+            exposure:
+              include: "*"
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.liu.learn</groupId>
+    <artifactId>cloud_bom</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <properties>
+       <!-- <druid.version>1.2.6</druid.version>
+        <mybatis-spring-boot-starter.version>2.1.4</mybatis-spring-boot-starter.version>
+        <mybatis.version>3.5.2</mybatis.version>
+        <mybatis-plus.version>3.4.2</mybatis-plus.version>-->
+        <cloud_common_db.version>1.0-SNAPSHOT</cloud_common_db.version>
+        <cloud_common_public.version>1.0-SNAPSHOT</cloud_common_public.version>
+        <cloud_common_api.version>1.0-SNAPSHOT</cloud_common_api.version>
+        <cloud_common_log.version>1.0-SNAPSHOT</cloud_common_log.version>
+        <cloud-common-swagger.version>1.0-SNAPSHOT</cloud-common-swagger.version>
+    </properties>
+    <!--管理所有第三方jar包版本，SpringCloud Alibaba 版本由主Pom控制-->
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!--cloud-common 版本-->
+            <dependency>
+                <groupId>com.liu.learn</groupId>
+                <artifactId>cloud_common_db</artifactId>
+                <version>${cloud_common_db.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liu.learn</groupId>
+                <artifactId>cloud_common_public</artifactId>
+                <version>${cloud_common_public.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liu.learn</groupId>
+                <artifactId>cloud_common_api</artifactId>
+                <version>${cloud_common_api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liu.learn</groupId>
+                <artifactId>cloud_common_log</artifactId>
+                <version>${cloud_common_log.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liu.learn</groupId>
+                <artifactId>cloud-common-swagger</artifactId>
+                <version>${cloud-common-swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.liu.learn</groupId>
+                <artifactId>common-swagger-starter</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+</project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cloud_alibaba_learn</artifactId>
+        <groupId>com.liu.learn</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloud_common</artifactId>
+    <packaging>pom</packaging>
+
+    <description>公共聚合模块</description>
+    <modules>
+        <module>cloud_common_db</module>
+        <module>cloud_common_public</module>
+        <module>cloud_common_utils</module>
+        <module>cloud_common_web</module>
+        <module>cloud_common_log</module>
+        <module>cloud_common_api</module>
+<!--        <module>cloud_common_service</module>-->
+        <module>cloud-common-service</module>
+        <module>cloud-common-swagger</module>
+        <module>common-swagger-starter</module>
+    </modules>
+
+</project>
